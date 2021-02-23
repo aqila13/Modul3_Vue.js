@@ -2,13 +2,14 @@ Vue.component('showform', {
     template: '#show-form',
     data(){
         return {
-            data: {nama: '', email: ''}
+            data: {nama: '',kelas: '',email: ''}
         }
     },
     methods: {
         simpan: function(){
             this.$emit('send-data', this.data);
             this.data.nama = "";
+            this.data.kelas = "";
             this.data.email = "";
         }
     }
@@ -28,6 +29,7 @@ var app = new Vue({
         getData: function (value){
             this.biodata = {
                 nama : value.nama,
+                kelas : value.kelas,
                 email : value.email
             }
         }
